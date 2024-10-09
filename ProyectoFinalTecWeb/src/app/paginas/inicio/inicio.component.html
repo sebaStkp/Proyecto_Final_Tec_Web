@@ -1,0 +1,8 @@
+<div class="categories">
+  <h1>Categorías</h1>
+  <ul>
+    <li *ngFor= "let categoria of categorias" (click)= "onCategoryClick(categoria.url)">
+      {{ categoria.name }}
+    </li>
+  </ul>
+</div>

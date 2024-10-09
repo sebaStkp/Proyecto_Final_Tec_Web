@@ -1,0 +1,48 @@
+.contenedor-producto {
+  box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px;
+  max-height: 450px;
+
+  .contenedor-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  h2 {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cantidad-control {
+    display: flex;
+    align-items: center;
+    button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    span {
+      font-size: 1rem;
+    }
+  }
+}
+
+.total {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-align: right;
+}

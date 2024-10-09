@@ -1,0 +1,65 @@
+<div *ngIf="detalleProducto" class="contenedor-detalle">
+  <div class="imagen">
+    <img [src]="detalleProducto.link" alt="Imagen del producto">
+  </div>
+  <div class="descripcion">
+    <h2>{{ detalleProducto.nombre }}</h2>
+    <p><s>Precio de venta recomendado: $1785</s></p>
+    <p><strong>¡Ahora a la venta por solo ${{ detalleProducto.precio }}</strong></p>
+    <p>Categoría: {{ detalleProducto.categoria }}</p>
+    <p>Cantidad: {{ detalleProducto.cantidad }}</p>
+
+    <!-- Mostrar atributos adicionales según la categoría -->
+    <div *ngIf="esCarne(detalleProducto)">
+      <p>Tipo de carne: {{ detalleProducto.tipo_carne }}</p>
+      <p>Peso: {{ detalleProducto.peso }} kg</p>
+      <p>Fecha de expiración: {{ detalleProducto.fecha_expiracion }}</p>
+    </div>
+    <div *ngIf="esBebida(detalleProducto)">
+      <p>Volumen: {{ detalleProducto.volumen }} ml</p>
+      <p>Alcohólico: {{ detalleProducto.alcoholico ? 'Sí' : 'No' }}</p>
+    </div>
+    <div *ngIf="esCosmetico(detalleProducto)">
+      <p>Tipo de cosmético: {{ detalleProducto.tipo_cosmetico }}</p>
+      <p>Contenido: {{ detalleProducto.contenido }} ml</p>
+    </div>
+    <div *ngIf="esFrutaVerdura(detalleProducto)">
+      <p>Tipo de producto: {{ detalleProducto.tipo_producto }}</p>
+      <p>Peso: {{ detalleProducto.peso }} kg</p>
+      <p>Origen: {{ detalleProducto.origen }}</p>
+    </div>
+    <div *ngIf="esHogar(detalleProducto)">
+      <p>Tipo de producto: {{ detalleProducto.tipo_producto }}</p>
+      <p>Cantidad: {{ detalleProducto.cantidad }}</p>
+    </div>
+    <div *ngIf="esLacteo(detalleProducto)">
+      <p>Peso: {{ detalleProducto.peso }} kg</p>
+      <p>Fecha de expiración: {{ detalleProducto.fecha_expiracion }}</p>
+    </div>
+    <div *ngIf="esPanaderia(detalleProducto)">
+      <p>Tipo de producto: {{ detalleProducto.tipo_producto }}</p>
+      <p>Fecha de elaboración: {{ detalleProducto.fecha_elaboracion }}</p>
+    </div>
+    <div *ngIf="esRopa(detalleProducto)">
+      <p>Tipo de ropa: {{ detalleProducto.tipo_ropa }}</p>
+      <p>Talla: {{ detalleProducto.talla }}</p>
+    </div>
+    <div *ngIf="esSaludMedicamento(detalleProducto)">
+      <p>Tipo de producto: {{ detalleProducto.tipo_producto }}</p>
+      <p>Dosis: {{ detalleProducto.dosis }}</p>
+      <p>Fecha de expiración: {{ detalleProducto.fecha_expiracion }}</p>
+    </div>
+    <div *ngIf="esSnackGolosina(detalleProducto)">
+      <p>Tipo de snack: {{ detalleProducto.tipo_snack }}</p>
+      <p>Peso: {{ detalleProducto.peso }} kg</p>
+    </div>
+
+    <div class="cont-botones">
+      <button *ngIf="!isInCart()" (click)="aniadirAlCarrito()">AÑADIR AL CARRITO</button>
+      <button *ngIf="isInCart()" (click)="eliminarItemCarrito()">Eliminar</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="!detalleProducto">
+  <p>Cargando detalles del producto...</p>
+</div>

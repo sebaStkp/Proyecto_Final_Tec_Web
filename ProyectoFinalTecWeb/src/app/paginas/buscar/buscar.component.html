@@ -1,0 +1,11 @@
+
+  <div class="contenedor-productos">
+    @for ( producto of results; track producto.id_producto){
+      <div>
+
+        <app-producto [producto]="producto" ></app-producto>
+      </div>
+    } @empty {
+      <p>No existen productos</p>
+    }
+   </div>

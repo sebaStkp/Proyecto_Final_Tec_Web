@@ -1,0 +1,53 @@
+.contenedor-producto {
+  box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px; // Ajusta esta altura según sea necesario para tu diseño
+  max-height: 450px;
+
+  .contenedor-imagen {
+    width: 100%;
+    height: 200px; // Ajusta según la altura que desees para la imagen
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      //object-fit: cover; // Asegura que la imagen cubra el contenedor sin deformarse
+    }
+  }
+
+  h2 {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .clasificacion-titulo {
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    flex-grow: 1; // Esto permite que los párrafos se expandan y ocupen el espacio disponible
+    overflow: hidden; // Oculta el contenido que se desborda
+    display: -webkit-box; // Necesario para el truncado de líneas
+    -webkit-line-clamp: 2; // Limita el texto a dos líneas
+    -webkit-box-orient: vertical; // Necesario para el truncado de líneas
+    text-overflow: ellipsis; // Agrega puntos suspensivos si el contenido es demasiado largo
+    line-height: 1; // Ajusta la altura de la línea según tus necesidades
+    max-height: 3em;
+  }
+
+
+}
+
+.cont-botones {
+  display: flex;
+  justify-content: space-between;
+}

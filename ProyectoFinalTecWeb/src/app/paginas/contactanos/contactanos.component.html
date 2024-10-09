@@ -1,0 +1,19 @@
+<!-- contactanos.component.html -->
+
+<div class="container">
+    <h2>Contacto</h2>
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" #nombreInput required>
+    </div>
+    <div>
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" #emailInput required>
+    </div>
+    <div>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" #mensajeInput required></textarea>
+    </div>
+    <button (click)="enviarFormulario(nombreInput.value, emailInput.value, mensajeInput.value)">Enviar</button>
+  </div>
+  

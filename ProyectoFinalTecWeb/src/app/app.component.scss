@@ -1,0 +1,68 @@
+.topnav {
+  background-color: #2c3e50;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+
+  a {
+    color: #ecf0f1;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+    margin-right: 10px;
+
+    &:hover {
+      background-color: #3498db;
+      color: white;
+    }
+
+    &.active {
+      background-color: #e74c3c;
+      color: white;
+    }
+  }
+
+  input[type="text"] {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #bdc3c7;
+    }
+  }
+}
+
+.carrito-pestana {
+  position: fixed;
+  top: 0;
+  right: -300px;  // Inicialmente oculto
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.3s;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.carrito-pestana.visible {
+  right: 0;  // Visible cuando se añade la clase visible
+}
+
+.carrito-pestana .close-btn {
+  margin: 16px;
+}
+

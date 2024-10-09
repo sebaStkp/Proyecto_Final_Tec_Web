@@ -1,0 +1,154 @@
+<div>
+    <h1>Editar Producto</h1>
+    <form [formGroup]="productoForm" (ngSubmit)="onSubmit()">
+      <!-- Campos comunes -->
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" formControlName="nombre" type="text">
+      </div>
+  
+      <div>
+        <label for="precio">Precio:</label>
+        <input id="precio" formControlName="precio" type="number" step="0.01">
+      </div>
+  
+      <div>
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" formControlName="categoria">
+          <option value="">Selecciona una categoria</option>
+          <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+        </select>
+      </div>
+  
+      <div>
+        <label for="link">Link:</label>
+        <input id="link" formControlName="link" type="text">
+      </div>
+  
+      <!-- Campos específicos según la categoría -->
+      <div *ngIf="productoForm.get('categoria')?.value === 'Carnes'">
+        <div>
+          <label for="tipo_carne">Tipo de Carne:</label>
+          <input id="tipo_carne" formControlName="tipo_carne" type="text">
+        </div>
+        <div>
+          <label for="peso">Peso:</label>
+          <input id="peso" formControlName="peso" type="number" step="0.01">
+        </div>
+        <div>
+          <label for="fecha_expiracion">Fecha de Expiración:</label>
+          <input id="fecha_expiracion" formControlName="fecha_expiracion" type="date">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Bebidas'">
+        <div>
+          <label for="volumen">Volumen:</label>
+          <input id="volumen" formControlName="volumen" type="number" step="0.01">
+        </div>
+        <div>
+          <label for="alcoholico">Alcohólico:</label>
+          <input id="alcoholico" formControlName="alcoholico" type="checkbox">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Cosmeticos'">
+        <div>
+          <label for="tipo_cosmetico">Tipo de Cosmético:</label>
+          <input id="tipo_cosmetico" formControlName="tipo_cosmetico" type="text">
+        </div>
+        <div>
+          <label for="contenido">Contenido:</label>
+          <input id="contenido" formControlName="contenido" type="number" step="0.01">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Frutas_Verduras'">
+        <div>
+          <label for="tipo_producto">Tipo de Producto:</label>
+          <input id="tipo_producto" formControlName="tipo_producto" type="text">
+        </div>
+        <div>
+          <label for="peso">Peso:</label>
+          <input id="peso" formControlName="peso" type="number" step="0.01">
+        </div>
+        <div>
+          <label for="origen">Origen:</label>
+          <input id="origen" formControlName="origen" type="text">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Hogar'">
+        <div>
+          <label for="tipo_producto">Tipo de Producto:</label>
+          <input id="tipo_producto" formControlName="tipo_producto" type="text">
+        </div>
+        <div>
+          <label for="cantidad">Cantidad:</label>
+          <input id="cantidad" formControlName="cantidad" type="number" step="0.01">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Lacteos'">
+        <div>
+          <label for="peso">Peso:</label>
+          <input id="peso" formControlName="peso" type="number" step="0.01">
+        </div>
+        <div>
+          <label for="fecha_expiracion">Fecha de Expiración:</label>
+          <input id="fecha_expiracion" formControlName="fecha_expiracion" type="date">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Panaderia'">
+        <div>
+          <label for="tipo_producto">Tipo de Producto:</label>
+          <input id="tipo_producto" formControlName="tipo_producto" type="text">
+        </div>
+        <div>
+          <label for="fecha_elaboracion">Fecha de Elaboración:</label>
+          <input id="fecha_elaboracion" formControlName="fecha_elaboracion" type="date">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Ropa'">
+        <div>
+          <label for="tipo_ropa">Tipo de Ropa:</label>
+          <input id="tipo_ropa" formControlName="tipo_ropa" type="text">
+        </div>
+        <div>
+          <label for="talla">Talla:</label>
+          <input id="talla" formControlName="talla" type="text">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Salud_Medicamentos'">
+        <div>
+          <label for="tipo_producto">Tipo de Producto:</label>
+          <input id="tipo_producto" formControlName="tipo_producto" type="text">
+        </div>
+        <div>
+          <label for="dosis">Dosis:</label>
+          <input id="dosis" formControlName="dosis" type="text">
+        </div>
+        <div>
+          <label for="fecha_expiracion">Fecha de Expiración:</label>
+          <input id="fecha_expiracion" formControlName="fecha_expiracion" type="date">
+        </div>
+      </div>
+  
+      <div *ngIf="productoForm.get('categoria')?.value === 'Snacks_Golosinas'">
+        <div>
+          <label for="tipo_snack">Tipo de Snack:</label>
+          <input id="tipo_snack" formControlName="tipo_snack" type="text">
+        </div>
+        <div>
+          <label for="peso">Peso:</label>
+          <input id="peso" formControlName="peso" type="number" step="0.01">
+        </div>
+      </div>
+  
+      <button type="submit">Guardar Producto</button>
+    </form>
+  </div>
+  

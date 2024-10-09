@@ -1,0 +1,22 @@
+<!-- producto.component.html -->
+<div class="contenedor-producto">
+  <h2 class="titulo">{{ producto.nombre }}</h2>
+  <div class="contenedor-imagen">
+    <img [src]="producto.link" alt="{{ producto.nombre }}">
+  </div>
+
+  <p>{{ producto.categoria }}</p>
+  <div>
+    <span>Precio: </span><span>{{ producto.precio }} Bs.</span>
+  </div>
+  <div class="cont-botones">
+      <!-- Utiliza [routerLink] para enlazar dinámicamente el enlace basado en producto.id_producto -->
+      <button [routerLink]="['/detalles',producto.categoria, producto.id_producto]">Ver detalles</button>
+      <!-- Usa *ngIf para mostrar u ocultar el botón según el estado de isInCart() -->
+      <button *ngIf="!isInCart()" (click)="aniadirAlCarrito()">Añadir</button>
+      <button *ngIf="isInCart()" (click)="eliminarItemCarrito()">Eliminar</button>
+      <button *ngIf="!isInCart()" (click)="eliminarProducto()">Eliminar</button>
+      <!-- Usa *ngIf para mostrar u ocultar el botón según el estado de isInCart() -->
+      <button *ngIf="!isInCart()" (click)="editarProducto()">Editar</button>
+  </div>
+</div>

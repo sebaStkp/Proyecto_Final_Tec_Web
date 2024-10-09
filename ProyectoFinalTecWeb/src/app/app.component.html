@@ -1,0 +1,24 @@
+<div class="topnav">
+  <a [routerLink]="['inicio']" routerLinkActive="active">Inicio</a>
+  <a [routerLink]="['tienda']" routerLinkActive="active">Tienda</a>
+  <a [routerLink]="['contactanos']" routerLinkActive="active">Contactanos</a>
+  <a [routerLink]="['aniadir']" routerLinkActive="active">Añadir Producto</a>
+
+  <input type="text" placeholder="Buscar..." [formControl]="searchControl" (input)="onSearch()"/>
+  <a (click)="toggleShoppingDiv()">Carrito {{getItemsCount()}}</a>
+
+
+</div>
+
+<div class="carrito-pestana" [class.visible]="showShoppingDiv"> <!-- clase.visible es para añadir el css posteriormente -->
+  <button class="close-btn" (click)="toggleShoppingDiv()">Close</button>
+  <app-carrito *ngIf="showShoppingDiv"></app-carrito>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
